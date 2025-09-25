@@ -2,15 +2,15 @@ import Calculator from '@/components/Calculator';
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-gradient-main flex items-center justify-center p-4">
+    <div className="min-h-screen bg-background flex items-center justify-center p-4">
       <div className="w-full max-w-md">
-        <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold text-foreground mb-2">Calculator</h1>
-          <p className="text-muted-foreground">Modern • Elegant • Functional</p>
+        <div className="text-center mb-6">
+          <h1 className="text-2xl font-semibold text-foreground mb-1">Calculator</h1>
+          <p className="text-sm text-muted-foreground">Simple & Clean</p>
         </div>
         <Calculator />
-        <div className="text-center mt-6 text-sm text-muted-foreground">
-          Use your keyboard for quick calculations
+        <div className="text-center mt-4 text-xs text-muted-foreground">
+          Keyboard shortcuts supported
         </div>
       </div>
     </div>

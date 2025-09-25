@@ -48,15 +48,14 @@ export default {
           foreground: "hsl(var(--card-foreground))",
         },
         calc: {
+          bg: "hsl(var(--calc-bg))",
           display: "hsl(var(--calc-display))",
-          button: "hsl(var(--calc-button))",
-          'button-hover': "hsl(var(--calc-button-hover))",
-          'button-active': "hsl(var(--calc-button-active))",
           number: "hsl(var(--calc-number))",
+          'number-hover': "hsl(var(--calc-number-hover))",
           operator: "hsl(var(--calc-operator))",
           'operator-hover': "hsl(var(--calc-operator-hover))",
-          equals: "hsl(var(--calc-equals))",
-          'equals-hover': "hsl(var(--calc-equals-hover))",
+          text: "hsl(var(--calc-text))",
+          'text-light': "hsl(var(--calc-text-light))",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
@@ -69,19 +68,9 @@ export default {
           ring: "hsl(var(--sidebar-ring))",
         },
       },
-      backgroundImage: {
-        'gradient-main': 'var(--gradient-main)',
-        'gradient-button': 'var(--gradient-button)',
-        'gradient-operator': 'var(--gradient-operator)',
-        'gradient-equals': 'var(--gradient-equals)',
-      },
       boxShadow: {
-        'calc-button': 'var(--shadow-button)',
-        'calc-display': 'var(--shadow-display)',
-        'calc-glow': 'var(--shadow-glow)',
-      },
-      transitionTimingFunction: {
-        'bounce-smooth': 'cubic-bezier(0.68, -0.55, 0.265, 1.55)',
+        'soft': 'var(--shadow-soft)',
+        'button': 'var(--shadow-button)',
       },
       borderRadius: {
         lg: "var(--radius)",

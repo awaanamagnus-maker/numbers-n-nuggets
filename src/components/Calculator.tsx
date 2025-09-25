@@ -145,19 +145,17 @@ const Calculator = () => {
   }: {
     children: React.ReactNode;
     onClick: () => void;
-    variant?: 'number' | 'operator' | 'equals' | 'clear';
+    variant?: 'number' | 'operator' | 'clear';
     className?: string;
   }) => {
     const getVariantStyles = () => {
       switch (variant) {
         case 'operator':
-          return 'bg-gradient-operator hover:bg-calc-operator-hover text-calc-number font-semibold shadow-calc-glow';
-        case 'equals':
-          return 'bg-gradient-equals hover:bg-calc-equals-hover text-calc-number font-semibold shadow-calc-glow';
+          return 'bg-calc-operator hover:bg-calc-operator-hover text-white font-medium';
         case 'clear':
-          return 'bg-calc-button hover:bg-calc-button-hover text-accent font-semibold';
+          return 'bg-calc-number hover:bg-calc-number-hover text-calc-text font-medium';
         default:
-          return 'bg-gradient-button hover:bg-calc-button-hover text-calc-number';
+          return 'bg-calc-number hover:bg-calc-number-hover text-calc-text';
       }
     };
 
@@ -165,10 +163,10 @@ const Calculator = () => {
       <Button
         onClick={onClick}
         className={cn(
-          'h-16 text-xl font-medium rounded-2xl border-0 shadow-calc-button',
-          'transition-all duration-200 ease-out',
-          'hover:scale-105 active:scale-95',
-          'focus:outline-none focus:ring-2 focus:ring-primary/50',
+          'h-14 text-lg rounded-xl border-0 shadow-button',
+          'transition-all duration-150 ease-out',
+          'hover:scale-[1.02] active:scale-[0.98]',
+          'focus:outline-none focus:ring-2 focus:ring-accent/20',
           getVariantStyles(),
           className
         )}
@@ -180,51 +178,48 @@ const Calculator = () => {
   };
 
   return (
-    <div className="w-full max-w-sm mx-auto bg-gradient-main p-6 rounded-3xl shadow-2xl border border-border/20">
+    <div className="w-full max-w-sm mx-auto bg-calc-bg p-6 rounded-2xl shadow-soft border border-border">
       {/* Display */}
-      <div className="bg-calc-display p-6 rounded-2xl mb-6 shadow-calc-display">
+      <div className="bg-calc-display p-5 rounded-xl mb-5">
         <div className="text-right">
-          <div className="text-4xl font-light text-calc-number break-all">
+          <div className="text-3xl font-light text-calc-text tracking-wide">
             {state.display}
           </div>
         </div>
       </div>
 
       {/* Buttons Grid */}
-      <div className="grid grid-cols-4 gap-3">
+      <div className="grid grid-cols-4 gap-2">
         {/* First Row */}
-        <CalcButton variant="clear" onClick={clear} className="col-span-2">
+        <CalcButton variant="clear" onClick={clear} className="col-span-3">
           Clear
         </CalcButton>
         <CalcButton variant="operator" onClick={() => performOperation('÷')}>
           ÷
-        </CalcButton>
-        <CalcButton variant="operator" onClick={() => performOperation('×')}>
-          ×
         </CalcButton>
 
         {/* Second Row */}
         <CalcButton onClick={() => inputNumber('7')}>7</CalcButton>
         <CalcButton onClick={() => inputNumber('8')}>8</CalcButton>
         <CalcButton onClick={() => inputNumber('9')}>9</CalcButton>
-        <CalcButton variant="operator" onClick={() => performOperation('-')}>
-          −
+        <CalcButton variant="operator" onClick={() => performOperation('×')}>
+          ×
         </CalcButton>
 
         {/* Third Row */}
         <CalcButton onClick={() => inputNumber('4')}>4</CalcButton>
         <CalcButton onClick={() => inputNumber('5')}>5</CalcButton>
         <CalcButton onClick={() => inputNumber('6')}>6</CalcButton>
-        <CalcButton variant="operator" onClick={() => performOperation('+')}>
-          +
+        <CalcButton variant="operator" onClick={() => performOperation('-')}>
+          −
         </CalcButton>
 
         {/* Fourth Row */}
         <CalcButton onClick={() => inputNumber('1')}>1</CalcButton>
         <CalcButton onClick={() => inputNumber('2')}>2</CalcButton>
         <CalcButton onClick={() => inputNumber('3')}>3</CalcButton>
-        <CalcButton variant="equals" onClick={calculate} className="row-span-2">
-          =
+        <CalcButton variant="operator" onClick={() => performOperation('+')}>
+          +
         </CalcButton>
 
         {/* Fifth Row */}
@@ -232,6 +227,9 @@ const Calculator = () => {
           0
         </CalcButton>
         <CalcButton onClick={inputDecimal}>.</CalcButton>
+        <CalcButton variant="operator" onClick={calculate}>
+          =
+        </CalcButton>
       </div>
     </div>
   );
