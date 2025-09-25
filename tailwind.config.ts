@@ -47,6 +47,17 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        calc: {
+          display: "hsl(var(--calc-display))",
+          button: "hsl(var(--calc-button))",
+          'button-hover': "hsl(var(--calc-button-hover))",
+          'button-active': "hsl(var(--calc-button-active))",
+          number: "hsl(var(--calc-number))",
+          operator: "hsl(var(--calc-operator))",
+          'operator-hover': "hsl(var(--calc-operator-hover))",
+          equals: "hsl(var(--calc-equals))",
+          'equals-hover': "hsl(var(--calc-equals-hover))",
+        },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
@@ -57,6 +68,20 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+      },
+      backgroundImage: {
+        'gradient-main': 'var(--gradient-main)',
+        'gradient-button': 'var(--gradient-button)',
+        'gradient-operator': 'var(--gradient-operator)',
+        'gradient-equals': 'var(--gradient-equals)',
+      },
+      boxShadow: {
+        'calc-button': 'var(--shadow-button)',
+        'calc-display': 'var(--shadow-display)',
+        'calc-glow': 'var(--shadow-glow)',
+      },
+      transitionTimingFunction: {
+        'bounce-smooth': 'cubic-bezier(0.68, -0.55, 0.265, 1.55)',
       },
       borderRadius: {
         lg: "var(--radius)",
